@@ -15,9 +15,15 @@ library.py:
 
 
 RESPONSIBILITY MATRIX
--------------------------------------------------------------------------------
-  Kenneth               |            Estella           |         Eve
--------------------------------------------------------------------------------
-Wrote server code            Wrote library code            Wrote client code
-Debugging program            Debugging program             Debugging program
-Wrote MakeFile               Drew ALL diagrams             Wrote readMe
+-------------------------------------------------------------------------------------------------
+|           Kenneth               |              Estella           |            Eve             |
+| ------------------------------  | ------------------------------ | ----------------------------
+|    Wrote server code            |    Wrote library code          |    Wrote client code
+|    Debugging program            |    Debugging program           |    Debugging program
+|    Wrote Makefile               |    Drew ALL diagrams           |    Wrote ReadMe     
+
+
+
+
+
+
