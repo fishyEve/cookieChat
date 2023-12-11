@@ -75,16 +75,23 @@ TASKS INVOLVED (correspondence to section 3 of original program design document)
 
 
 PROTOCOL (section of section 8 revision of original program design document):
-  * The client side will be started by running the client program with a specified host name and port number as command line arguments.
-  * When the client program connects to the server, it will recieve a "HELLO" message from the server indicating a successful connection. (MAYBE DELETE THIS IDK IF WE DO THIS)
-  * If the connection is unsuccessful, the program closes
-  * After successful client-server connection, the user on the client side will be prompted to select a nickname in the chat application.
-  * 
+  * The server side will be started by running the server program with a specified port number as a command line argument. This is the syntax: python3 server.py <portNumber>
+  * The client side will be started by running the client program with a specified host name and port number as command line arguments. This is the syntax: python3 client.py <hostname> <portNumber>
+  * The client connects to the server, if the connection is unsuccessful, the program closes
+  * After successful client-server connection, the user on the client side will be prompted to select a nickname in the chat application. The client sends this nickname to the server.
+  * The server reads the nickname sent by the client. If the nickname is unique, it sends 'READY' to the client, indicating the specific client is ready to enter the chat room. If the nickname is not unique, the server sends 'RETRY' to the client, to which the client will prompt the user to enter a different nickname.
+  * Once a unique nickname is verified by the server, the server logs that nickname, as well as a date, timestamp, and the client's IP address to a logfile, as well as a string indicating that specified client has 'began chatting'.
+  * A client can send a message into the chat by typing it out and hitting enter. This message is sent to the server by the client. 
+  * When the server recieves a message from the client, it sends that message to every client EXCEPT the client the message originates from...instead, the server sends that client "MSGSENT". All recieved messages are also logged to the logfile. 
+  * When a client reads a message that was pushed to them by the server, it prints it out to display to the user UNLESS if the message is 'MSGSENT'. That message can only be viewed after the client sends a message. (FIX THIS LATER)
+  * When a client is ready to leave the chat, they press CTRL-C. The client sends 'BYE' to the server.
+  * When the server recieves 'BYE' from the client, it pushes the corresponding nickname to the client that left to all other connected clients as well as the string "has left the chat". This information is also logged to the log file.
+  * When a user is ready to shut the server down, they just hit CTRL-C. The server indicates to all connected clients that it will shut down in 5 seconds, and then it shuts down.
 
 
 
 ASSUMPTIONS
-  add later
+  A message is no longer than KFSJHFKLSHBJKFL characters
 
 THE DEVELOPMENT PROCESS
   The first problem the Cookie Chat team ran into was creating a proper application design before the start of the actual code development process. There was a struggle to think of all details necessary to implement in the specs for this project. With the library, there was a struggle to implment JSON (JavaScript Object Notation), as none of our group members had used it in the past and it was a whole new thing to learn. With the client, there was an issue handling how to read a message pushed to all clients EXCEPT the client that sent the message in the first place.
