@@ -52,7 +52,7 @@ TASKS INVOLVED (correspondence to section 3 of original program design document)
 
       
   Server Subtasks  
-  ----------------                                                                                                                                                                                                                                                                                                                                                                                                      - Handle connections from MULTIPLE clients (Kenneth) - 4 hours                                                                                                                                   
+      - Handle connections from MULTIPLE clients (Kenneth) - 4 hours                                                                                                                                   
       - Creation of list with all connected client's nicknames (Kenneth) - 1 hour                                                                                                      
       - Log all connected clients with time stamps to logfile (Kenneth) - 4 hours                                                                                                    
       - Read name sent by client and validate it, send 'READY' if its valid and 'RETRY' if not to client (Kenneth) - 7 hours                                                              
