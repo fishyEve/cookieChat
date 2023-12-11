@@ -93,11 +93,11 @@ PROTOCOL (section of section 8 revision of original program design document):
 ASSUMPTIONS                                                                                                                                                                                  
   A message is no longer than KFSJHFKLSHBJKFL characters
 
-THE DEVELOPMENT PROCESS
+THE DEVELOPMENT PROCESS                                                                                                                                                                        
   The first problem the Cookie Chat team ran into was creating a proper application design before the start of the actual code development process. There was a struggle to think of all details necessary to implement in the specs for this project. With the library, there was a struggle to implment JSON (JavaScript Object Notation), as none of our group members had used it in the past and it was a whole new thing to learn. With the client, there was an issue handling how to read a message pushed to all clients EXCEPT the client that sent the message in the first place.
   With the server, there was a major issue figuring out how to fork properly such that the server could handle multiple client connections. It took four days to figure out how to properly fork and handle multiple clients connecting to the server at once, however, after that occurance, the server then ran into the issue of successfully pushing one client's message to all other connected clients. 
 
-STATUS
+STATUS                                                                                                                                                                                    
   laterrrr
 
 
