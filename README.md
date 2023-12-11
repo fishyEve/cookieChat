@@ -21,7 +21,7 @@ COOKIE CHAT CLIENT INSTRUCTIONS:
 HOW TO BUILD COOKIE CAT: 
 To successfully run Cookie Chat, the server must first be started up. To start the server, simply type ./server <portnum> into the command line, the program will take EXACTLY two arguments. Once the server is on and ready, it is ready to accept client connections. To connect a client, a user needs to type ./client <servername>, <portnum>. When a client is ready to disconnect, the user merely needs to hit cntrl-C on their keyboard. When a user is ready to disconnect the server, the user needs to hit cntrl-C, and then the server will shut down in a few seconds.
 
-
+ 
 FILE MANIFSET
 ----------------
 client.py: this is the code for the client side of the program
@@ -42,7 +42,7 @@ RESPONSIBILITY MATRIX
 
 
 TASKS INVOLVED (correspondence to section 3 of original program design document):
-  General Subtasks
+  General Subtasks                                                                                                                                            
       - Program Design (done by Estella, Kenneth, & Eve) - 30 hours                                                                                                  
       - Charts/Diagram design (Estella) - 4 hours
       - Team Organization/Coordination (Eve) - 2 hours
