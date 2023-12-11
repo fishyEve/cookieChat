@@ -43,8 +43,7 @@ RESPONSIBILITY MATRIX
 
 TASKS INVOLVED (correspondence to section 3 of original program design document):
   General Subtasks
-      1. Program Design (done by Estella, Kenneth, & Eve) - 30 hours
-      2. dsad
+      - Program Design (done by Estella, Kenneth, & Eve) - 30 hours                                                                                                  
       - Charts/Diagram design (Estella) - 4 hours
       - Team Organization/Coordination (Eve) - 2 hours
       - Creation of test cases for program development (Kenneth) - 2 hours
