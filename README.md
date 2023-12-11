@@ -61,14 +61,14 @@ TASKS INVOLVED (correspondence to section 3 of original program design document)
 
       
   Client Subtasks  
-  -----------------                                                                                                                                                                                            - Connect the client to the running server (Eve) - 1 hour                                                                                                                                                                                                                                                   
+      - Connect the client to the running server (Eve) - 1 hour                                                                                                                                                                                                                                                   
       - Prompt user to enter nickname, if unique, recieve 'READY' from server and allow entry into chat, if not unique, recieve 'RETRY' from server and prompt again, keep doing so until nickname is unique (Eve) - 3 hours                                                                                                                                                                  
       - take input in an infinite loop and send the input to the server, these are the messages. Read a message from the server, that is the message sent to all other clients. Break out of the infinite loop on ctrl-C, then send the client a message indicating they're leaving the chat and send the server a 'BYE' message indicating a client is disconnecting (Eve) - 10 hours                
 
 
       
   Library Subtasks                   
-  -----------------                                                                                                                                                                                            - Function that ensures ALL bytes of a message are sent AND include a timestamp (Estella) - 10 hours                                                                                               
+      - Function that ensures ALL bytes of a message are sent AND include a timestamp (Estella) - 10 hours                                                                                               
       - Function that ensures ALL bytes of a prompt are sent (Estella) - 7 hours                                                                                                                         
       - Function that ensures ALL bytes of text are read (Estella) - 5 hours                                                                                                                  
 
