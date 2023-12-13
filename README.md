@@ -38,7 +38,6 @@ RESPONSIBILITY MATRIX
 |    Wrote server code            |    Wrote library code          |    Wrote client code       |
 |    Debugging program            |    Debugging program           |    Debugging program       |
 |    Wrote testcases              |    Drew ALL diagrams           |    Wrote ReadMe            |
-|                                 |    Wrote Makefile              |                            | 
 -------------------------------------------------------------------------------------------------
 
 
