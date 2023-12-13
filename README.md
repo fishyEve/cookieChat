@@ -48,7 +48,7 @@ TASKS INVOLVED (correspondence to section 3 of original program design document)
       - Charts/Diagram design (Estella) - 4 hours                                                                                                                        
       - Team Organization/Coordination (Eve) - 2 hours                                                                                                                                        
       - Creation of test cases for program development (Kenneth) - 2 hours                                                                                                        
-      - Creation of readMe file (Eve, Kenneth, & Estella) - 15 hours                                                                                                                            
+      - Creation of readMe file (Eve) - 10 hours                                                                                                                            
       - Creation of makefile (MAYBE) (Estella) - some hours
 
       
@@ -108,6 +108,7 @@ STATUS
   - If a client tries to join the chatroom at the same time as another client, and the first client is not fully verified (meaning their nickname was already taken and they need to enter a different one) the program will crash.
   - If a client leaves the chat, the nickname they selected to use will still be unavalible
   - The server does not shut down in x amount of seconds on CTRL-C. It just instantly shuts down without warning any of the clients.
+  - The messages the client prints look odd. There are visible '\s' althroughout it. We ran out of time before we could correct the issue.
 
 
 
