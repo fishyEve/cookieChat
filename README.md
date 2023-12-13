@@ -49,7 +49,7 @@ TASKS INVOLVED (correspondence to section 3 of original program design document)
       - Team Organization/Coordination (Eve) - 2 hours                                                                                                                                        
       - Creation of test cases for program development (Kenneth) - 2 hours                                                                                                        
       - Creation of readMe file (Eve, Kenneth, & Estella) - 15 hours                                                                                                                            
-      - 
+      - Creation of makefile (MAYBE) (Estella) - some hours
 
       
   Server Subtasks  
@@ -96,7 +96,9 @@ PROTOCOL (section of section 8 revision of original program design document):
 
 
 ASSUMPTIONS                                                                                                                                                                                  
-  A message is no longer than 65,535 characters
+  - A message is no longer than 65,535 characters                                                                                                                                                         - The user knows how to run the server and the client (a user can learn by reading this readMe :D)
+  - The user will message in English
+  - The user will know have a host to connect their client to
 
 THE DEVELOPMENT PROCESS                                                                                                                                                                        
   The first problem the Cookie Chat team ran into was creating a proper application design before the start of the actual code development process. There was a struggle to think of all details necessary to implement in the specs for this project. With the library, there was a struggle to implment JSON (JavaScript Object Notation), as none of our group members had used it in the past and it was a whole new thing to learn. With the client, there was an issue handling how to read a message pushed to all clients EXCEPT the client that sent the message in the first place.
