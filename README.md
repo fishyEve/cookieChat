@@ -1,7 +1,7 @@
 # cookieChat
 
 ************************************************************
-                                                     COOKIE CHAT  
+                                             COOKIE CHAT  
 Authors: Kenneth Au, Estella Mercado, Eve Collier                                                                                                                                                    
 Assignment: Final Project - Chat Server                                                                                                                                                            
 Course: CSC 328 Fall 2023
@@ -10,16 +10,16 @@ Course: CSC 328 Fall 2023
 Cookie Chat is a chat server created by three sleepy college students for a final network programming project in Fall of 2023
 
 COOKIE CHAT SERVER INSTRUCTIONS:
-  1. To run Cookie Chat's server, go to the terminal. On the command line type in: "python3 server.py <portNumber> (where port number is a valid port between 10000 - 65535)
-  2. When a user is ready to shut the server down, all they need to do is hit ctrl-c on their keyboard. This command will prompt the server to shut down in five seconds.
+  1. To run Cookie Chat's server, go to the terminal. On the command line type in: "python3 server.py <portNumber> 
+  2. When a user is ready to shut the server down, all they need to do is hit CTRL-C on their keyboard. This command will shut the server down
 
 COOKIE CHAT CLIENT INSTRUCTIONS:
-  1. To run Cookie Chat's client, go to the terminal. On the command line, type in: "python3 client.py <hostname> <portNumber> (hostname is localhost on ACAD, port number is still a valid port  between 10000 - 65535)
+  1. To run Cookie Chat's client, go to the terminal. On the command line, type in: "python3 client.py <hostname> <portNumber> 
   2. Enter a nickname. Once your nickname is validated, you're ready to start cookie chatting!
-  3. Once a client is ready to disconnect, the user merely needs to hit ctrl-c on their keyboard to exit the cookie chatroom
+  3. Once a client is ready to disconnect, the user merely needs to hit CTRL-C on their keyboard to exit the cookie chatroom
 
-HOW TO BUILD COOKIE CAT: 
-To successfully run Cookie Chat, the server must first be started up. To start the server, simply type ./server <portnum> into the command line, the program will take EXACTLY two arguments. Once the server is on and ready, it is ready to accept client connections. To connect a client, a user needs to type ./client <servername>, <portnum>. When a client is ready to disconnect, the user merely needs to hit cntrl-C on their keyboard. When a user is ready to disconnect the server, the user needs to hit cntrl-C, and then the server will shut down in a few seconds.
+HOW TO BUILD COOKIE CHAT: 
+To successfully run Cookie Chat, the server must first be started up. To start the server, simply type python3 server.py <portnum> into the command line, as specified above. Once the server is on and ready, it is ready to accept client connections. To connect a client, a user needs to type python3 lient.py <hostname>, <portnum>, as specified above. When a client is ready to disconnect, the user merely needs to hit CTRL-C on their keyboard. When a user is ready to disconnect the server, the user needs to hit CTRL-C, and then the server will shut down instantly.
 
  
 FILE MANIFSET
@@ -29,6 +29,12 @@ client.py: this is the code for the client side of the program
 server.py: this is the code for the server side of the program
 
 library.py: this file contains numerous helper functions implemented in both the client and the server
+
+ClientFlowchart.png: this file contains the image of a flowchart entailing the client functionality
+
+FinalProject_SequenceDiagram.pdf: this file contains the image of a sequential diagram for our program
+
+ServerStateDiagram.ong: this file contains the server state machine diagram
 
 
 RESPONSIBILITY MATRIX
@@ -44,11 +50,10 @@ RESPONSIBILITY MATRIX
 TASKS INVOLVED (correspondence to section 3 of original program design document):                                                                                                                        
   General Subtasks                                                                                              
       - Program Design (Estella, Kenneth, & Eve) - 30 hours                                                                                                                                             
-      - Charts/Diagram design (Estella) - 4 hours                                                                                                                        
-      - Team Organization/Coordination (Eve) - 2 hours                                                                                                                                        
-      - Creation of test cases for program development (Kenneth) - 2 hours                                                                                                        
+      - Charts/Diagram design (Estella) - 10 hours                                                                                                                        
+      - Team Organization/Coordination (Eve) - 6 hours                                                                                                                                        
+      - Creation of test cases for program development (Kenneth) - 4 hours                                                                                                        
       - Creation of readMe file (Eve) - 10 hours                                                                                                                            
-      - Creation of makefile (MAYBE) (Estella) - some hours
 
       
   Server Subtasks  
@@ -89,9 +94,8 @@ PROTOCOL (section of section 8 revision of original program design document):
   * When a client reads a message that was pushed to them by the server, it prints that message out onto the screen for the user to read.
   * The server is always listening for messages from all connected clients. A client will ONLY read from the socket if there is data in it to be read. 
   * When a client is ready to leave the chat, they press CTRL-C. The client sends 'BYE' to the server.
-  * When the server recieves 'BYE' from the client, it pushes the corresponding nickname to the client that left to all other connected clients as well as the string "has left the chat". OR When the server recieves 'BYE' from the client, it sends a message to all connected clients that states "a client has left the chat".
-  * When a user is ready to shut the server down, they just hit CTRL-C. The server indicates to all connected clients that it will shut down in 5 seconds, and then it shuts down. OR when a user is ready to shut the server down they just hit CTRL-C and then the server shuts down.
-
+  * When the server recieves 'BYE' from the client, it pushes the corresponding nickname to the client that left to all other connected clients and indicates they have left to all other connected clients. 
+  * When a user is ready to shut the server down, they just hit CTRL-C. The server shuts down instantly
 
 
 ASSUMPTIONS                                                                                                                                                                                  
@@ -107,7 +111,8 @@ STATUS
   - If a client tries to join the chatroom at the same time as another client, and the first client is not fully verified (meaning their nickname was already taken and they need to enter a different one) the program will crash.
   - If a client leaves the chat, the nickname they selected to use will still be unavalible
   - The server does not shut down in x amount of seconds on CTRL-C. It just instantly shuts down without warning any of the clients.
-  - The messages the client prints look odd. There are visible '\s' althroughout it. We ran out of time before we could correct the issue.
+  - The server does not log messages to the logfile
+  - 
 
 
 
