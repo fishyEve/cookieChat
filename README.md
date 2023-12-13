@@ -1,7 +1,7 @@
 # cookieChat
 
 ************************************************************
-                                               COOKIE CHAT  
+                                                                           COOKIE CHAT  
 Authors: Kenneth Au, Estella Mercado, Eve Collier                                                                                                                                                    
 Assignment: Final Project - Chat Server                                                                                                                                                            
 Course: CSC 328 Fall 2023
