@@ -55,7 +55,7 @@ TASKS INVOLVED (correspondence to section 3 of original program design document)
       - Charts/Diagram design (Estella) - 10 hours                                                                                                                        
       - Team Organization/Coordination (Eve) - 6 hours                                                                                                                                        
       - Creation of test cases for program development (Kenneth) - 4 hours                                                                                                        
-      - Creation of readMe file (Eve) - 10 hours                                                                                                                            
+      - Creation of readMe file (Eve & Estella) - 15 hours                                                                                                                            
 
       
   Server Subtasks  
@@ -66,7 +66,7 @@ TASKS INVOLVED (correspondence to section 3 of original program design document)
       - Read message sent by a client, push all messages recieved from a client to all OTHER connected clients (Kenneth) - 20 hours  
       - When a client disconnects, the server notifies all other clients that a client has left the chat (Kenneth) - 19 hours
       - Server debugging (Eve & Estella & Kenneth) - 12 hours                                                                                     
-      - Signal handling on CTRL-C (Kenneth) - 2 hour                            
+      - Signal handling on CTRL-C (Kenneth) - 2 hours                          
 
       
   Client Subtasks  
@@ -74,7 +74,8 @@ TASKS INVOLVED (correspondence to section 3 of original program design document)
       - Prompt user to enter nickname, if unique, recieve 'READY' from server and allow entry into chat, if not unique, recieve 'RETRY' from server and prompt again, keep doing so until nickname is unique (Eve) - 7 hours                                                                                                                                                                  
       - take input in an infinite loop and send the input to the server, these are the messages (Eve) - 15 hours
       - Read a message from the server, that is the message sent from a different client (Eve) - 16 hours
-      - Use signal handler to break out of the infinite loop on CTRL-C, then send the client a message indicating they're leaving the chat and send the server a 'BYE' message indicating a client is disconnecting (Eve) - 10 hours                
+      - Use signal handler to break out of the infinite loop on CTRL-C, then send the client a message indicating they're leaving the chat and send the server a 'BYE' message indicating a client is disconnecting (Eve) - 10 hours                   
+      - Client debugging (Kenneth & Eve & Estella) - 16 hours
 
 
       
@@ -82,6 +83,7 @@ TASKS INVOLVED (correspondence to section 3 of original program design document)
       - Function that ensures a message (prompt) WITHOUT a timestamp is sent (like a user-supplied nickname) (Estella) - 10 hours                                                                       
       - Function that ensures a message WITH a timestamp and a nickname are sent (Estella) - 17 hours                                                                                                   
       - Function that ensures ALL bytes of text are read (Estella) - 13 hours                                                                                                                                 - A helper function for the above functions that reads BOTH prompt messages and chat messages (Estella) - 10 hours
+      - Debugging (Estella & Eve) - 10 hours
 
 
 PROTOCOL (section of section 8 revision of original program design document):
