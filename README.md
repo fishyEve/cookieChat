@@ -123,7 +123,7 @@ STATUS
   - Messages have the following form: "{\"Timestamp\": \"2023-12-13 18:39:49.894785\", \"Nickname\": \"eve\", \"Message\": \"hi\"}"
   - The server shoots tracebacks upon the user hitting CTRL-C UNLESS if all clients disconnect before the server shuts down
   - The server doesn't do anything with the 'BYE' message it recieves
-  - When a client leaves the chat, 'BYE' is output in the terminal, a message prints saying  'a client is offline, they did not like sugar cookies'
+  - When a client leaves the chat, 'BYE' is output in the terminal, as well as a message stating a client has left the chat. We do not display the nickname of the client who left the chat.
   - Please have mercy
 
 
