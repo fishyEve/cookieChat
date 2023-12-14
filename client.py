@@ -13,7 +13,7 @@ import signal
 from multiprocessing import Process
 from library import sendingPromptMessage
 from library import totallyReadingText
-#from library import sendingChats
+from library import sendingChats
 #from library import totallyReadingChats
 
 
@@ -22,7 +22,7 @@ from library import totallyReadingText
 # Parameters: footSocks - the socket created upon connection to the server
 #
 # Return value: none
-def clientChat(footSocks):
+def clientChat(footSocks, nickname):
 	print("in chat")
 	socks_in_drawer = [sys.stdin, footSocks]
 	while True:
@@ -40,8 +40,8 @@ def clientChat(footSocks):
 						#sys.stdout.write(sockMsg)
 						print(sockMsg)
 				else:
-					msg = sys.stdin.readline()	# user has entered a message
-					footSocks.sendall(sendingPromptMessage(msg))
+					msg = input()	# user has entered a message
+					footSocks.sendall(sendingChats(nickname, msg))
 		except KeyboardInterrupt:
 			footSocks.sendall(sendingPromptMessage("BYE"))
 			print(" You are now leaving Cookie Chat! Have a sweet day!")	
@@ -106,11 +106,7 @@ if __name__ == "__main__":
 	print(sockMsg)
 	while True:
 		if sockMsg == '"READY"':
-			#message = input()
-			#footSocks.sendall(sendingPromptMessage(message))
-			#msg = totallyReadingText(footSocks)
-			#print(msg)
-			clientChat(footSocks)
+			clientChat(footSocks, nickname)
 			break
 		elif sockMsg == '"RETRY"':
 			print("That nickname is already in use by another user. That sucks. Please enter a different one: ")
