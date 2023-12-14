@@ -17,17 +17,14 @@ from library import sendingChats
 #/*Professor Name:   Dr. Schwesinger                            */
 #/*Assignment:       Network Program Implementation             */
 #/*Filename:         server.py                                  */
-#/*                                                             */
 #/*Purpose:          Creates a chat server using select         */
-#/*                                                             */
 #/*Comments:         Prepared by Kenneth Ly Au with thanks to   */
 #/*                  Dr. Schwesinger, the Computer Science      */
 #/*                  Graduate Assitant Atom.                    */
-#/*                                                             */
 #/*Speical Thanks:   Mercado, Estella - library                 */
 #/*                  Collier, Eve - Client                      */
 #/*                                                             */
-#/*Possible Issues:  Name assignement might not work correctly  */ 
+#/*Possible Issues:  Log Messages do not work                   */ 
 #/***************************************************************/
 
 nameList = []
@@ -79,11 +76,11 @@ def createChatServer(portNum):
                         if sock in clientList:
                             clientList.remove(sock)
                         # at this stage, no data means probably the connection has been broken
-                        broadcast(server_socket, sock, name, str(" is offline, doesn't like sugar cookies")) 
+                        broadcast(server_socket, sock, name, str("a client has left the chat, they don't like sugar cookies")) 
                 # exception 
                 except OSError as error:
                     print(error)
-                    broadcast(server_socket, sock, name, str(" disconnected, doesn't like oatmeal cookies"))
+                    broadcast(server_socket, sock, name, str("a client disconnected, they don't like oatmeal cookies"))
                     server_socket.close()
                     sys.exit(-1)
                 except KeyboardInterrupt:
@@ -93,11 +90,12 @@ def createChatServer(portNum):
             
 #/*************************************************************************/
 #/*                                                                       */
-#/* Function name: logName                                                */
-#/* Description:   logs the unqiue name and time joined                   */
-#/* Parameters:    name: type string, import                              */
-#/*                current_time: type time, import                        */
-#/*                nameList: a list of names, import                      */
+#/* Function name: broadcast                                              */
+#/* Description:   sends a message to each client in the client list      */
+#/* Parameters:    server_socket: type socket, import                     */
+#/*                sock: type time, import                                */
+#/*                names: type string, import                             */
+#/*                message: type string, import                           */
 #/* Return Value:  None                                                   */
 #/*                                                                       */
 #/*************************************************************************/    
@@ -108,7 +106,7 @@ def broadcast (server_socket, sock, name, message):
             try :
                 #socket.sendall(sendingChats(name, message))
                 socket.sendall(sendingPromptMessage(message))
-                print(name + ": " + message)
+                #print(name + ": " + message)
             except OSError as error:
                 print(error)
                 # broken socket connectedSocketion
@@ -119,11 +117,9 @@ def broadcast (server_socket, sock, name, message):
                     
 #/*************************************************************************/
 #/*                                                                       */
-#/* Function name: logName                                                */
-#/* Description:   logs the unqiue name and time joined                   */
-#/* Parameters:    name: type string, import                              */
-#/*                current_time: type time, import                        */
-#/*                nameList: a list of names, import                      */
+#/* Function name: checkForname                                           */
+#/* Description:   checks user nickname                                   */
+#/* Parameters:    connectedSocket: type socket, import                   */
 #/* Return Value:  None                                                   */
 #/*                                                                       */
 #/*************************************************************************/        
@@ -171,11 +167,11 @@ def logName(name, current_time):
 
 #/*************************************************************************/
 #/*                                                                       */
-#/* Function name: logName                                                */
+#/* Function name: logMessage                                             */
 #/* Description:   logs the unqiue name and time joined                   */
 #/* Parameters:    name: type string, import                              */
 #/*                current_time: type time, import                        */
-#/*                nameList: a list of names, import                */
+#/*                nameList: a list of names, import                      */
 #/* Return Value:  None                                                   */
 #/*                                                                       */
 #/*************************************************************************/    
@@ -191,11 +187,9 @@ def logMessage(name, message):
 
 #/*************************************************************************/
 #/*                                                                       */
-#/* Function name: logName                                                */
-#/* Description:   logs the unqiue name and time joined                   */
-#/* Parameters:    name: type string, import                              */
-#/*                current_time: type time, import                        */
-#/*                nameList: a list of names, import                */
+#/* Function name: main                                                   */
+#/* Description:   main function, gets port num                           */
+#/* Parameters:    None                                                   */
 #/* Return Value:  None                                                   */
 #/*                                                                       */
 #/*************************************************************************/            
@@ -208,3 +202,4 @@ if __name__ == "__main__" :
         createChatServer(portNum) 
     #openFile()
         
+
