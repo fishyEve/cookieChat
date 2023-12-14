@@ -122,7 +122,7 @@ STATUS
   - The server does not log messages to the logfile
   - Messages have the following form: "{\"Timestamp\": \"2023-12-13 18:39:49.894785\", \"Nickname\": \"eve\", \"Message\": \"hi\"}"
   - The server shoots tracebacks upon the user hitting CTRL-C UNLESS if all clients disconnect before the server shuts down
-  - The server doesn't do anything with the 'BYE' message they recieve
+  - The server doesn't do anything with the 'BYE' message it recieves
   - Please have mercy
 
 
