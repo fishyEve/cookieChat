@@ -67,14 +67,17 @@ def totallyReadingBytes(yourSocket, numBytes):
 #Return Value: textString - decoded string value of the sent prompt/chats
 def totallyReadingText(yourSocket):
 
-	#gets the length of the prompt to be read in bytes
-	textLength = int.from_bytes((totallyReadingBytes(yourSocket, 2)), 'big') #only reads two bytes at first to get length
+	while True:
+		#gets the length of the prompt to be read in bytes
+		textLength = int.from_bytes((totallyReadingBytes(yourSocket, 2)), 'big') #only reads two bytes at first to get length
+		
+		if (textLength == 0): break
 
-	#gets the correct number of bytes to be read
-	textBytes = totallyReadingBytes(yourSocket, textLength)
+		#gets the correct number of bytes to be read
+		textBytes = totallyReadingBytes(yourSocket, textLength)
 
-	#converts the bytes read into a string
-	textString = textBytes.decode()
+		#converts the bytes read into a string
+		textString = textBytes.decode()
 
 	#converts the Json object back into a dictionary
 	textDictionary = json.loads(textString)
